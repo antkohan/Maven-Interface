@@ -1,0 +1,98 @@
+<div id="container">
+  <div id="header">
+    <TMPL_INCLUDE NAME="topBar.tmpl">
+  </div>
+
+  <div id="content">
+    <div id="navbar-wrapper">
+      <TMPL_INCLUDE NAME="navBar.tmpl">
+    </div>
+
+    <div id="data-content">
+
+      <TMPL_LOOP CONTAINER_DATA>
+
+	<table class="dataTable">
+	  <thead>
+	    <tr>
+	      <th colspan="2">Container: <TMPL_VAR NAME="CONTAINER_NAME"></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <th>Container SHA</th>
+	      <td><TMPL_VAR NAME="SHA_CONTAINER"></td>
+	    </tr>
+	    <tr>
+	      <th>Container Name</th>
+	      <td><TMPL_VAR NAME="CONTAINER_NAME"></td>
+	    </tr>
+	    <tr>
+	      <th>Container Path</th>
+	      <td><TMPL_VAR NAME="CONTAINER_PATH"></td>
+	    </tr>
+	    <tr>
+	      <th>Classes</th>
+	      <td class="button-cell">
+		<form action="/cgi-bin/displayObjects.cgi" method="post">
+		  <input name="input" type="hidden" value="getClassesForContainer:<TMPL_VAR ESCAPE=HTML NAME='SHA_CONTAINER'>"/>
+		  <input type="submit" name="submit" value="Search"/>
+		  <input type="hidden" name="type" value="query"/>
+		  <input name="classBox" value="class" type="hidden"/>
+		</form>
+	      </td>
+	    </tr>
+	    <tr>
+	      <th>Methods</th>
+	      <td class="button-cell">
+		<form action="/cgi-bin/displayObjects.cgi" method="post">
+		  <input name="input" type="hidden" value="getMethodsForContainer:<TMPL_VAR ESCAPE=HTML NAME='SHA_CONTAINER'>"/>
+		  <input type="submit" name="submit" value="Search"/>
+		  <input type="hidden" name="type" value="query"/>
+		  <input name="methBox" value="meth" type="hidden"/>
+		</form>
+	      </td>
+	    </tr>
+	    <tr>
+	      <th>Attributes</th>
+	      <td class="button-cell">
+		<form action="/cgi-bin/displayObjects.cgi" method="post">
+		  <input name="input" type="hidden" value="getAttributesForContainer:<TMPL_VAR ESCAPE=HTML NAME='SHA_CONTAINER'>"/>
+		  <input type="submit" name="submit" value="Search"/>
+		  <input type="hidden" name="type" value="query"/>
+		  <input name="attrBox" value="attr" type="hidden"/>
+		</form>
+	      </td>
+	    </tr>
+	    <tr>
+	      <th>Files</th>
+	      <td class="button-cell">
+		<form action="/cgi-bin/displayObjects.cgi" method="post">
+		  <input name="input" type="hidden" value="getFilesForContainer:<TMPL_VAR ESCAPE=HTML NAME='SHA_CONTAINER'>"/>
+		  <input type="submit" name="submit" value="Search"/>
+		  <input type="hidden" name="type" value="query"/>
+		  <input name="fileBox" value="file" type="hidden"/>
+		</form>
+	      </td>
+	    </tr>
+	    <tr>
+	      <th>In Projects</th>
+	      <td class="button-cell"> 
+		<form action="/cgi-bin/displayObjects.cgi" method="post">
+		  <input name="input" type="hidden" value="getProjectsForContainer:<TMPL_VAR ESCAPE=HTML NAME='SHA_CONTAINER'>"/>
+		  <input type="submit" name="submit" value="Search"/>
+		  <input type="hidden" name="type" value="query"/>
+		  <input name="projectBox" value="project" type="hidden"/>
+		</form>
+	      </td>
+	    </tr>
+	  </tbody>
+	</table>
+
+	<br/>
+
+      </TMPL_LOOP>
+    </div>
+    <div id="sidebar"></div>
+  </div>
+</div>

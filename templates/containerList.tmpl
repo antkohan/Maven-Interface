@@ -1,0 +1,23 @@
+<table class="list" id="containerList">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Container Path</th>
+    </tr>
+  </thead>
+  <tbody>
+    <TMPL_LOOP CONTAINER_LINKS>
+      <tr>
+	<td><a href="showAllData.cgi?type=container&sha=<TMPL_VAR ESCAPE=HTML NAME='SHA_CONTAINER'>" onclick="return updateBar('Container','<TMPL_VAR NAME='CONTAINER_NAME'>','<TMPL_VAR NAME='SHA_CONTAINER'>');">
+	      <TMPL_VAR NAME="CONTAINER_NAME"></a>
+	</td>
+	<td>
+	  <TMPL_VAR NAME="CONTAINER_PATH">
+	</td>
+      </tr>
+    </TMPL_LOOP>
+  </tbody>
+</table>
+<div id="containerPager" class="pager">
+  <TMPL_INCLUDE NAME="pager.tmpl">
+</div>

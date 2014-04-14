@@ -1,0 +1,80 @@
+<div id="container">
+  <div id="header">
+    <TMPL_INCLUDE NAME="topBar.tmpl">
+  </div>
+
+  <div id="content">
+    <div id="navbar-wrapper">
+      <TMPL_INCLUDE NAME="navBar.tmpl">
+    </div>
+
+    <div id="data-content">
+      <TMPL_LOOP CLASS_DATA>
+	<table class="dataTable">
+	  <thead>
+	    <tr>
+	      <th colspan="2">Class: <TMPL_VAR NAME="CLASS_NAME"></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <th>SHA</th>
+	      <td><TMPL_VAR NAME="SHA_SIG"></td>
+	    </tr>
+	    <tr>
+	      <th>Class Name</th>
+	      <td><TMPL_VAR NAME="CLASS_NAME"></td>
+	    </tr>
+	    <tr>
+	      <th>Full Class Name</th>
+	      <td><TMPL_VAR NAME="FULL_CLASS_NAME"></td>
+	    </tr>
+	    <tr>
+	      <th>Class Path</th>
+	      <td><TMPL_VAR NAME="CLASS_PATH"></td>
+	    </tr>
+	    <tr>
+	      <th>Basename</th>
+	      <td><TMPL_VAR NAME="BASENAME"></td>
+	    </tr>
+	    <tr>
+	      <th>In File</th>
+	      <td class="button-cell">
+		<form action="/cgi-bin/displayObjects.cgi" method="post">
+		  <input name="input" type="hidden" value="sha_file:<TMPL_VAR ESCAPE=HTML NAME='SHA_FILE'>"/>
+		  <input type="submit" name="submit" value="Search"/>
+		  <input type="hidden" name="type" value="search"/>
+		  <input name="fileBox" value="file" type="hidden"/>
+		</form>
+	      </td>
+	    </tr>
+	    <tr>
+	      <th>In Containers</th>
+	      <td class="button-cell">
+		<form action="/cgi-bin/displayObjects.cgi" method="post">
+		  <input name="input" type="hidden" value="getContainersForFile:<TMPL_VAR ESCAPE=HTML NAME='SHA_FILE'>"/>
+		  <input type="submit" name="submit" value="Search"/>
+		  <input type="hidden" name="type" value="query"/>
+		  <input name="containerBox" value="container" type="hidden"/>
+		</form>
+	      </td>
+	    </tr>
+	    <tr>
+	      <th>In Projects</th>
+	      <td class="button-cell"> 
+		<form action="/cgi-bin/displayObjects.cgi" method="post">
+		  <input name="input" type="hidden" value="getProjectsForClass:<TMPL_VAR ESCAPE=HTML NAME='SHA_SIG'>"/>
+		  <input type="submit" name="submit" value="Search"/>
+		  <input type="hidden" name="type" value="query"/>
+		  <input name="projectBox" value="project" type="hidden"/>
+		</form>
+	      </td>
+	    </tr>
+	  </tbody>
+	</table>
+	<br/>
+      </TMPL_LOOP CLASS_DATA>
+    </div>
+    <div id="sidebar"></div>
+  </div>
+</div>

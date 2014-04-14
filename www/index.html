@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/index.css">
+  <link rel="stylesheet" type="text/css" href="/css/site.css">
+  <script src="/js-bin/jquery-1.11.0.min.js" type="text/javascript"></script>
+  <script src="/js-bin/jquery.cookie.js" type="text/javascript"></script>
+  <script src="/js-bin/navBar.js" type="text/javascript"></script>
+</head>
+<body>
+  <div id="formBox">
+  <h1 id="title">Maven Search</h1>
+  <form onsubmit="return clearBarCookie();" id="searchBar" action="/cgi-bin/displayObjects.cgi" method="post">
+    <input type="text" name="input" id="searchText"/>
+    <input type="submit" name="submit" value="Search" id="searchButton"/>
+    <input type="hidden" name="type" value="searchBar"/>
+    <div id="checkBoxs">
+      <input type="checkbox" name="classBox" value="class" checked/> Classes
+      <input type="checkbox" name="methBox" value="meth" checked/> Methods
+      <input type="checkbox" name="attrBox" value="attr" checked/> Attributes
+      <input type="checkbox" name="fileBox" value="file"/> Files
+      <input type="checkbox" name="containerBox" value="container"/> Containers
+      <input type="checkbox" name="projectBox" value="project"/> Projects
+    </div>
+  </form>
+  </div>
+</body>
+</html>

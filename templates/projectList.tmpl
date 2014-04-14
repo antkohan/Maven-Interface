@@ -1,0 +1,24 @@
+<table class="list" id="projectList">
+  <thead>
+    <tr>
+      <th>Artifact</th>
+      <th>Version</th>
+      <th>Group Id</th>
+      <th>Organization</th>
+    </tr>
+  </thead>
+  <tbody>
+    <TMPL_LOOP PROJECT_LINKS>
+      <tr>
+	<td><a href="showAllData.cgi?type=project&sha=<TMPL_VAR ESCAPE=HTML NAME='SHA_POM'>" onclick="return updateBar('Project','<TMPL_VAR NAME='ARTIFACT'>','<TMPL_VAR NAME='SHA_POM'>');">
+	    <TMPL_VAR NAME="ARTIFACT"></a></td>
+	<td><TMPL_VAR NAME="VERSION"></td>
+	<td><TMPL_VAR NAME="GROUP_ID"></td>
+	<td><TMPL_VAR NAME="ORG_NAME"></td>
+      </tr>
+    </TMPL_LOOP>
+  </tbody>
+</table>
+<div id="projectPager" class="pager">
+  <TMPL_INCLUDE NAME="pager.tmpl">
+</div>

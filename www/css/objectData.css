@@ -1,0 +1,70 @@
+.dataTable {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: verdana,arial,sans-serif;
+    font-size:12px;
+    color:#000000;
+    border-collapse: collapse;
+    box-shadow: 10px 10px 5px #444444;
+}
+
+.dataTable thead th {
+    border-width: 1px;
+    padding: 8px;
+    background-color: #6d929b;
+    color: #FFFFFF;
+}
+
+.dataTable tbody th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #8dc9d8;
+    background-color: #FFFFFF;
+}
+.dataTable tbody td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #8dc9d8;
+   
+}
+
+.dataTable thead th:empty {
+    background: transparent;
+    border: none;
+}
+
+.dataTable tbody tr:nth-child(odd) {
+    background-color: #d6e6e6;
+}
+
+.dataTable tbody tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+.dataTable .button-cell {
+    padding: 0px;
+    text-align: center;
+}
+
+.dataTable .button-cell input {
+    width: 30%;
+    height: 23px;
+    margin: 0px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    border: solid;
+    border-color: #92b6be;
+    border-width: 0px;
+    border-radius: 5px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#92b6be), to(#6d929b));
+    background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+    border-top-right-radius: 5px 5px;
+    border-bottom-right-radius: 5px 5px;
+
+} 

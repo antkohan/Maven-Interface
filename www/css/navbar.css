@@ -1,0 +1,54 @@
+#navbar {
+    width: 90%;
+    padding: 10px;   
+    word-wrap: break-word;
+    text-align: center;
+    background-color: white; 
+    -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4); 
+    -moz-box-shadow: 0px 1px 6px rgba(23, 69, 88, .5);
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 7px; 
+    border-radius: 7px;
+}
+
+.downArrow {
+    width: 13px;
+    height: auto;
+}
+
+#navbar text {
+    font-size: 19px;
+}
+
+#navbar a:link {
+    color: #6d929b;
+    text-decoration: none;
+} 
+
+#navbar a:visited { 
+    color: #6d929b;
+    text-decoration: none;
+}
+ 
+#navbar a:hover {
+    color: #6d929b;
+    text-decoration: underline;
+} 
+
+#navbar a:active { 
+    color: #6d929b;
+    text-decoration: none; 
+}
+
+#clearButton {
+    color: #6d929b;
+} 
+
+#clearDiv {
+    padding-top: 30px;
+    text-align: left;
+}
+
+#navData {
+    margin-top: -20px;
+}

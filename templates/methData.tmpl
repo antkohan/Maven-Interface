@@ -1,0 +1,90 @@
+<div id="container">
+  <div id="header">
+    <TMPL_INCLUDE NAME="topBar.tmpl">
+  </div>
+
+  <div id="content">
+    <div id="navbar-wrapper">
+      <TMPL_INCLUDE NAME="navBar.tmpl">
+    </div>
+
+    <div id="data-content">
+      <TMPL_LOOP METH_DATA>
+	
+	<table class="dataTable">
+	  <thead>
+	    <tr>
+	      <th colspan="2">Method: <TMPL_VAR NAME="METH_ID"></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <th>SHA</th>
+	      <td><TMPL_VAR NAME="SHA_SIG"></td>
+	    </tr>
+	    <tr>
+	      <th>Method Name</th>
+	      <td><TMPL_VAR NAME="METH_ID"></td>
+	    </tr>
+	    <tr>
+	      <th>Full Method Name</th>
+	      <td><TMPL_VAR NAME="METH_FULL_ID"></td>
+	    </tr>    
+	    <tr>
+	      <th>Type</th>
+	      <td><TMPL_VAR NAME="TYPE"></td>
+	    </tr>      
+	    <tr>
+	      <th>Parameters</th>
+	      <td><TMPL_VAR NAME="PARAMETERS"></td>
+	    </tr>
+	    <tr>
+	      <th>In Class</th>
+	      <td><TMPL_VAR NAME="CLASS_NAME"></td>
+	    </tr>
+	    <tr>
+	      <th>In File</th>
+	      <td class="button-cell">
+		<form action="/cgi-bin/displayObjects.cgi" method="post">
+		  <input name="input" type="hidden" value="sha_file:<TMPL_VAR ESCAPE=HTML NAME='SHA_FILE'>"/>
+		  <input type="submit" name="submit" value="Search"/>
+		  <input type="hidden" name="type" value="search"/>
+		  <input name="fileBox" value="file" type="hidden"/>
+		</form>
+	      </td>
+	    </tr>
+	    <tr>
+	      <th>In Containers</th>
+	      <td class="button-cell">
+		<form action="/cgi-bin/displayObjects.cgi" method="post">
+		  <input name="input" type="hidden" value="getContainersForFile:<TMPL_VAR ESCAPE=HTML NAME='SHA_FILE'>"/>
+		  <input type="submit" name="submit" value="Search"/>
+		  <input type="hidden" name="type" value="query"/>
+		  <input name="containerBox" value="container" type="hidden"/>
+		</form>
+	      </td>
+	    </tr>
+	    <tr>
+	      <th>In Projects</th>
+	      <td class="button-cell"> 
+		<form action="/cgi-bin/displayObjects.cgi" method="post">
+		  <input name="input" type="hidden" value="getProjectsForMeth:<TMPL_VAR ESCAPE=HTML NAME='SHA_SIG'>"/>
+		  <input type="submit" name="submit" value="Search"/>
+		  <input type="hidden" name="type" value="query"/>
+		  <input name="projectBox" value="project" type="hidden"/>
+		</form>
+	      </td>
+	    </tr>
+	  </tbody>
+	</table>
+	
+	<br/>
+
+      </TMPL_LOOP>
+    </div>
+    <div id="sidebar"></div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,16 @@
+<div id="topBar">
+  <form action="/cgi-bin/displayObjects.cgi" method="post">
+    <input type="text" name="input" id="searchText"/>
+    <input type="submit" name="submit" value="Search" id="searchButton"/>
+    <input type="hidden" name="type" value="searchBar"/>
+    <div id="checkBoxs">
+      <input type="checkbox" name="classBox" value="class"/> Classes
+      <input type="checkbox" name="methBox" value="meth"/> Methods
+      <input type="checkbox" name="attrBox" value="attr"/> Attributes
+      <input type="checkbox" name="fileBox" value="file"/> Files
+      <input type="checkbox" name="containerBox" value="container"/> Containers
+      <input type="checkbox" name="projectBox" value="project"/> Projects
+    </div>
+  </form>
+</div>
+

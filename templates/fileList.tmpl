@@ -1,0 +1,27 @@
+<table class="list" id="fileList">
+  <thead>
+    <tr>
+      <th>File Name</th>
+      <th>File Path</th>
+      <th>Mod Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <TMPL_LOOP FILE_LINKS>
+      <tr>
+	<td><a href="showAllData.cgi?type=file&sha=<TMPL_VAR ESCAPE=HTML NAME='SHA_FILE_SIG'>" onclick="return updateBar('File','<TMPL_VAR NAME='FILE_NAME'>','<TMPL_VAR NAME='SHA_FILE_SIG'>');">
+	      <TMPL_VAR NAME="FILE_NAME"><TMPL_VAR NAME="EXTENSION"></a>
+	</td>
+	<td>
+	  <TMPL_VAR NAME="FILE_PATH">
+	</td>
+	<td>
+	  <TMPL_VAR NAME="MOD_DATE">
+	</td>
+      </tr>
+    </TMPL_LOOP>
+  </tbody>
+</table>
+<div id="filePager" class="pager">
+  <TMPL_INCLUDE NAME="pager.tmpl">
+</div>

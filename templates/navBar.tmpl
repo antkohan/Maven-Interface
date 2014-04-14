@@ -1,0 +1,19 @@
+<div id="navbar">
+  <text><b>Navigation Bar</b></text>
+  <br/>
+  <br/>
+  <a href="/">Home</a>
+  <div id="navData">
+    <TMPL_LOOP NAV_BAR>
+      <br/>
+      <img class="downArrow" src="/css/images/22-Down-Arrow-icon.png"/>
+      <br/>
+      <b><TMPL_VAR NAME="TITLE">:</b>
+      <a onclick="return removeExtra('<TMPL_VAR NAME='SHA'>');" href="showAllData.cgi?type=<TMPL_VAR NAME='TYPE'>&sha=<TMPL_VAR NAME='SHA'>"><TMPL_VAR NAME="NAME"></a>
+    </TMPL_LOOP>
+    <br/>
+  </div>
+  <div id="clearDiv">
+    <a id="clearButton" onclick="return clearBar();">Clear</a>
+  </div>
+</div>

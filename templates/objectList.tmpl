@@ -1,0 +1,106 @@
+<div id="container">
+
+  <div id="header">
+    <TMPL_INCLUDE NAME="topBar.tmpl">
+  </div>
+
+  <div id="content">
+    <div id="navbar-wrapper">
+      <TMPL_INCLUDE NAME="navBar.tmpl">
+    </div>
+    
+    <div id="tabs-content">
+      <TMPL_IF NAME="CLASS_LINKS">
+	<div id="tabs">
+      <TMPL_ELSE><TMPL_IF NAME="METH_LINKS">
+	 <div id="tabs">
+      <TMPL_ELSE><TMPL_IF NAME="ATTR_LINKS">
+	  <div id="tabs">
+      <TMPL_ELSE><TMPL_IF NAME="FILE_LINKS">
+	  <div id="tabs">
+      <TMPL_ELSE><TMPL_IF NAME="CONTAINER_LINKS">
+	  <div id="tabs">
+      <TMPL_ELSE><TMPL_IF NAME="PROJECT_LINKS">
+	  <div id="tabs">
+      <TMPL_ELSE>
+	  <div id="noResults">
+      </TMPL_IF>
+      </TMPL_IF>
+      </TMPL_IF>
+      </TMPL_IF>
+      </TMPL_IF>
+      </TMPL_IF>
+	<ul>
+	  <TMPL_IF NAME="CLASS_LINKS">
+	    <li><a href="#tabs-1">Classes</a></li>
+	  </TMPL_IF>
+	  <TMPL_IF NAME="METH_LINKS">
+	    <li><a href="#tabs-2">Methods</a></li>
+	  </TMPL_IF>
+	  <TMPL_IF NAME="ATTR_LINKS">
+	    <li><a href="#tabs-3">Attributes</a></li>
+	  </TMPL_IF>
+	  <TMPL_IF NAME="FILE_LINKS">
+	    <li><a href="#tabs-4">Files</a></li>
+	  </TMPL_IF>
+	  <TMPL_IF NAME="CONTAINER_LINKS">
+	    <li><a href="#tabs-5">Containers</a></li>
+	  </TMPL_IF>
+	  <TMPL_IF NAME="PROJECT_LINKS">
+	    <li><a href="#tabs-6">Projects</a></li>
+	  </TMPL_IF>
+	</ul>
+	<TMPL_IF NAME="CLASS_LINKS">
+	  <div id="tabs-1">
+	    <TMPL_INCLUDE NAME="classList.tmpl">
+	  </div>
+	</TMPL_IF>
+
+	<TMPL_IF NAME="METH_LINKS">
+	  <div id="tabs-2">
+	    <TMPL_INCLUDE NAME="methList.tmpl">
+	  </div>
+	</TMPL_IF>
+
+	<TMPL_IF NAME="ATTR_LINKS">
+	  <div id="tabs-3">
+	    <TMPL_INCLUDE NAME="attrList.tmpl">
+	  </div>
+	</TMPL_IF>
+
+	<TMPL_IF NAME="FILE_LINKS">
+	  <div id="tabs-4">
+	    <TMPL_INCLUDE NAME="fileList.tmpl">
+	  </div>
+	</TMPL_IF>
+
+	<TMPL_IF NAME="CONTAINER_LINKS">
+	  <div id="tabs-5">
+	    <TMPL_INCLUDE NAME="containerList.tmpl">
+	  </div>
+	</TMPL_IF>
+
+	<TMPL_IF NAME="PROJECT_LINKS">
+	  <div id="tabs-6">
+	    <TMPL_INCLUDE NAME="projectList.tmpl">
+	  </div>
+	</TMPL_IF>
+
+	<TMPL_UNLESS NAME="CLASS_LINKS">
+	<TMPL_UNLESS NAME="METH_LINKS">
+	<TMPL_UNLESS NAME="ATTR_LINKS">
+	<TMPL_UNLESS NAME="FILE_LINKS">
+	<TMPL_UNLESS NAME="CONTAINER_LINKS">
+        <TMPL_UNLESS NAME="PROJECT_LINKS">
+	    <h1 align="center">No Objects Found</h1>
+        </TMPL_UNLESS>
+	</TMPL_UNLESS>
+	</TMPL_UNLESS>
+	</TMPL_UNLESS>
+	</TMPL_UNLESS>
+	</TMPL_UNLESS>
+    </div>
+  </div>
+    <div id="sidebar"></div>
+</div>
+

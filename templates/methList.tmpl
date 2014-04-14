@@ -1,0 +1,24 @@
+<table class="list" id="methList">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>In File</th>
+      <th>File Mod Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <TMPL_LOOP METH_LINKS>
+      <tr>
+	<td><a href="showAllData.cgi?type=meth&sha=<TMPL_VAR ESCAPE=HTML NAME='SHA_SIG'>" onclick="return updateBar('Method','<TMPL_VAR NAME='METH_ID'>','<TMPL_VAR NAME='SHA_SIG'>');">
+	    <TMPL_VAR NAME="METH_ID"></a></td>
+	<td><TMPL_VAR NAME="TYPE"></td>
+	<td><TMPL_VAR NAME="FILE_NAME"></td>
+	<td><TMPL_VAR NAME="MOD_DATE"></td>
+      </tr>
+    </TMPL_LOOP>
+  </tbody>
+</table>
+<div id="methPager" class="pager">
+  <TMPL_INCLUDE NAME="pager.tmpl">
+</div>

@@ -1,0 +1,24 @@
+<table class="list" id="classList">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Full Name</th>
+      <th>In File</th>
+      <th>File Mod Date</th>
+    </tr>
+  <thead>
+    <tbody>
+      <TMPL_LOOP CLASS_LINKS>
+	<tr>
+	  <td><a href="showAllData.cgi?type=class&sha=<TMPL_VAR ESCAPE=HTML NAME='SHA_SIG'>" onclick="return updateBar('Class','<TMPL_VAR NAME='CLASS_NAME'>','<TMPL_VAR NAME='SHA_SIG'>');">
+	      <TMPL_VAR NAME="CLASS_NAME"></a></td>
+	  <td><TMPL_VAR NAME="FULL_CLASS_NAME"></td>
+	  <td><TMPL_VAR NAME="FILE_NAME"></td>
+	  <td><TMPL_VAR NAME="MOD_DATE"></td>
+	</tr>
+      </TMPL_LOOP>
+    </tbody>
+</table>
+<div id="classPager" class="pager">
+  <TMPL_INCLUDE NAME="pager.tmpl">
+</div>
